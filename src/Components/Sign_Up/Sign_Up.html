@@ -25,8 +25,10 @@
 
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="tel" name="phone" id="phone" required class="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
+                        <input type="tel" name="phone" id="phone" required pattern="[0-9]{10}" class="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
+                        <small id="helpId" class="text-muted">Please enter a 10-digit phone number.</small>
                     </div>
+                        
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" name="email" id="email" required class="form-control" placeholder="Enter your email" aria-describedby="helpId" />
