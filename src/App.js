@@ -14,6 +14,8 @@ import InstantConsultation from './Components/InstantConsultation/InstantConsult
 
 import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
 
+import DoctorCard from './Components/DoctorCard/DoctorCard';
+
 
 function App() {
 
@@ -27,6 +29,7 @@ function App() {
                 <Route path="/Login" element={<Login/>}/>
                 <Route path="/instant-consultation" element={<InstantConsultation />} />
                 <Route path='/finddoctor' element={<FindDoctorSearch/>}/>
+                <Route path="/search/doctors" element={<DoctorCard/>} />
               </Routes>
             
         </BrowserRouter>
