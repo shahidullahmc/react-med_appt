@@ -40,7 +40,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
           <div className="doctor-card-detail-speciality">General Physician</div>
           <div className="doctor-card-detail-experience">10 years experience</div>
           <div className="doctor-card-detail-consultationfees">Ratings: {ratings}</div>
-          <button className='book-appointment-btn' onClick={handleBooking}>
+          <button className="book-appointment-btn" onClick={handleBooking}>
             <div>Book Appointment</div>
             <div>No Booking Fee</div>
           </button>
@@ -57,7 +57,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
           <div className="doctor-card-detail-speciality">General Physician</div>
           <div className="doctor-card-detail-experience">7 years experience</div>
           <div className="doctor-card-detail-consultationfees">Ratings: {ratings}</div>
-          <button className='book-appointment-btn' onClick={handleBooking}>
+          <button className="book-appointment-btn" onClick={handleBooking}>
             <div>Book Appointment</div>
             <div>No Booking Fee</div>
           </button>
@@ -74,7 +74,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
           <div className="doctor-card-detail-speciality">General Physician</div>
           <div className="doctor-card-detail-experience">8 years experience</div>
           <div className="doctor-card-detail-consultationfees">Ratings: {ratings}</div>
-          <button className='book-appointment-btn' onClick={handleBooking}>
+          <button className="book-appointment-btn" onClick={handleBooking}>
             <div>Book Appointment</div>
             <div>No Booking Fee</div>
           </button>
