@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import 'reactjs-popup/dist/index.css';
 import './DoctorCard.css';
+import AppointmentForm from '../AppointmentForm/AppointmentForm'
 import { v4 as uuidv4 } from 'uuid';
 
 const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
@@ -78,6 +80,17 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
           </button>
         </div>
       </div>
+      {showModal && (
+        <div className="appointment-modal">
+            <div className="modal-content">
+                <button className="close-modal" onClick={() => setShowModal(false)}>
+                    Close
+                </button>
+                <AppointmentForm onSubmit={handleFormSubmit} />
+            </div>
+        </div>
+      )}
+
     </div>
   );
 };
