@@ -39,6 +39,16 @@ const Navbar = () => {
     }
   }, []);
 
+  useEffect(() => {
+    // Check if the user is already logged in
+    const storedUsername = sessionStorage.getItem("name");
+
+    if (storedUsername) {
+        setIsLoggedIn(true);
+        setUsername(storedUsername);
+    }
+  }, []);
+
   return (
     <nav>
       <div className="nav__logo">
