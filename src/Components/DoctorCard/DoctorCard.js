@@ -89,4 +89,5 @@ export default function App() {
       <DoctorCard name="Dr. Dinah Jackson" speciality="General Physician" experience="8" ratings="4.7" />
     </div>
   );
-}
+};
+

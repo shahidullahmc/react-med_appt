@@ -16,6 +16,8 @@ import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
 
 import DoctorCard from './Components/DoctorCard/DoctorCard';
 
+import BookingConsultation from './Components/BookingConsultation';
+
 
 function App() {
 
@@ -30,6 +32,7 @@ function App() {
                 <Route path="/instant-consultation" element={<InstantConsultation />} />
                 <Route path='/finddoctor' element={<FindDoctorSearch/>}/>
                 <Route path="/search/doctors" element={<DoctorCard/>} />
+                <Route path="/booking-consultation" element={<BookingConsultation/>} />
               </Routes>
             
         </BrowserRouter>
