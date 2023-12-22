@@ -58,7 +58,6 @@ const Notification = ({ children }) => {
                 <p className="appointment-card__message">
                   <strong>Appointment Date:</strong> {appointmentData[0].date}
                 </p>
-                <button onClick={handleCancelAppointment}>Cancel Appointment</button>
               </div>
             </div>
           </div>

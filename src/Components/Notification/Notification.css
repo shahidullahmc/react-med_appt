@@ -1,16 +1,19 @@
-.appointment-card {
+.notification-container {
     position: fixed;
     display: flex;
-    top: 40%;
-    right: 0;
-    background-color: #0b99ffaa;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0b99ff;
     color: white;
-    padding: 40px;
+    padding: 20px;
     border-top-right-radius: 16px;
-    border-bottom-right-radius: 16px;
-}
-
-.appointment-card__content {
+    border-top-left-radius: 16px;
+  }
+  
+  .appointment-card__content {
     display: flex;
     flex-direction: column;
-}
+  }
+  
+  /* Add any additional styling you need */
+ 
