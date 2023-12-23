@@ -20,6 +20,8 @@ import BookingConsultation from './Components/BookingConsultation';
 
 import Notification from './Components/Notification/Notification';
 
+import ReviewForm from './Components/ReviewForm/ReviewForm';
+
 
 function App() {
 
@@ -36,6 +38,7 @@ function App() {
                         <Route path='/finddoctor' element={<FindDoctorSearch/>}/>
                         <Route path="/search/doctors" element={<DoctorCard/>} />
                         <Route path="/booking-consultation" element={<BookingConsultation/>} />
+                        <Route path="/reviews" element={<ReviewForm/>} />
                     </Routes>
             </Notification>   
         </BrowserRouter>
