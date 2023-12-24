@@ -1,48 +1,112 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import GiveReviews from './GiveReviews';
+import Popup from 'reactjs-popup';
+import { useNavigate } from 'react-router-dom';
 import "./ReviewForm.css"
 
-const ReviewForm = ({ doctorName, specialty }) => {
-  const [reviewText, setReviewText] = useState('');
+const ReviewForm = () => {
+    const [reviewData, setReviewData] = useState({});
 
-  const handleSubmit = () => {
-    // Your logic to handle review submission (e.g., send data to server/API)
-    alert(`Thank you for reviewing ${doctorName}!`);
-  };
+    const reportData = [
+        {
+            serialNumber: 1,
+            doctorName: 'Dr. Ramesh',
+            doctorSpeciality: 'Cardiology',
 
-  return (
-    <div style={{ marginTop: '10%' }} className="reviews-container">
-      <h3>Ratings and Reviews</h3>
-      <p>Our medical professionals are qualified and their Ratings and Reviews are verified</p>
-      <table className="report-table">
-        <thead>
-          <tr>
-            <th>Sl. No.</th>
-            <th>Doctor’s Name</th>
-            <th>Doctor Specialty</th>
-            <th>Provide review</th>
-            <th>Review given</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td></td>
-            <td></td>
-            <td><button className="update-button">Click Here</button></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td></td>
-            <td></td>
-            <td><button className="update-button">Click Here</button></td>
-            <td></td>
-          </tr>
-          {/* Repeat similar rows for other doctors */}
-        </tbody>
-      </table>
-    </div>
-  );
+        },
+        {
+            serialNumber: 2,
+            doctorName: 'Dr. Harini',
+            doctorSpeciality: 'Dermatology',
+
+        },
+    ];
+
+    const handleGiveReview = (serialNumber) => {
+        setReviewData((prevReviewData) => ({
+            ...prevReviewData,
+            [serialNumber]: ''
+        }));
+    };
+
+    const handleReviewSubmit = (serialNumber, review) => {
+        setReviewData((prevReviewData) => ({
+            ...prevReviewData,
+            [serialNumber]: review
+        }));
+    };
+    const navigate = useNavigate();
+    useEffect(() => {
+        //   const authtoken = sessionStorage.getItem("auth-token");
+        //   if (!authtoken) {
+        //       navigate("/login");
+        //   }
+    }, [])
+    return (
+        <div style={{ marginTop: '10%' }} className="reviews-container">
+            <h1>Reviews</h1>
+            <table className="report-table">
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Doctor Name</th>
+                        <th>Doctor Specialty</th>
+                        <th>Provide Feedback</th>
+                        <th>Review Given</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {reportData.map((report) => (
+                        <tr key={report.serialNumber}>
+                            <td>{report.serialNumber}</td>
+                            <td>{report.doctorName}</td>
+                            <td>{report.doctorSpeciality}</td>
+                            <td>
+                                {!reviewData[report.serialNumber] ? (
+                                    <Popup
+                                        trigger={
+                                            <button
+                                                className="give-review-button"
+                                                onClick={() => handleGiveReview(report.serialNumber)}
+                                            >
+                                                Click Here
+                                            </button>
+                                        }
+                                        modal
+                                        nested
+                                    >
+                                        {(close) => (
+                                            <div className="modal">
+                                                <GiveReviews
+                                                    serialNumber={report.serialNumber}
+                                                    onReviewSubmit={handleReviewSubmit}
+                                                    review={reviewData[report.serialNumber]} // Pass the review data
+                                                />
+                                                <button className="close-modal-button" onClick={close}>
+                                                    Close
+                                                </button>
+                                            </div>
+                                        )}
+                                    </Popup>
+                                ) : (
+                                    <button className="give-review-button" disabled>
+                                        Give Review
+                                    </button>
+                                )}
+                            </td>
+                            <td>
+                                {reviewData[report.serialNumber] && (
+                                    <div className="review-given">
+                                        <p>{reviewData[report.serialNumber]}</p>
+                                    </div>
+                                )}
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
 };
 
 export default ReviewForm;
