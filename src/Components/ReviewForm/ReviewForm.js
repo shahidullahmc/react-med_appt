@@ -10,14 +10,14 @@ const ReviewForm = () => {
     const reportData = [
         {
             serialNumber: 1,
-            doctorName: 'Dr. Ramesh',
-            doctorSpeciality: 'Cardiology',
+            doctorName: 'Dr. Jane Smith',
+            doctorSpeciality: 'Dermatology',
 
         },
         {
             serialNumber: 2,
-            doctorName: 'Dr. Harini',
-            doctorSpeciality: 'Dermatology',
+            doctorName: 'Dr. John Doe',
+            doctorSpeciality: 'Cardiology',
 
         },
     ];
