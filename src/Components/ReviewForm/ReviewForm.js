@@ -44,7 +44,8 @@ const ReviewForm = () => {
     }, [])
     return (
         <div style={{ marginTop: '10%' }} className="reviews-container">
-            <h1>Reviews</h1>
+            <h1>Reviews of our Doctors</h1>
+            <p>Our medical professionals are qualified and their Ratings and Reviews are verified</p>
             <table className="report-table">
                 <thead>
                     <tr>

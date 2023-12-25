@@ -13,3 +13,8 @@
    p {
     margin-bottom: 20px; /* Adjust as needed */
    }
+   .give-review-button:disabled {
+    background-color: #dddddd; /* Grey */
+    color: #555555;
+    cursor: not-allowed;
+}
