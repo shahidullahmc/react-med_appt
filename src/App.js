@@ -24,6 +24,8 @@ import ReviewForm from './Components/ReviewForm/ReviewForm';
 
 import ProfileForm from './Components/ProfileCard/ProfileCard';
 
+import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
+
 
 function App() {
 
@@ -42,6 +44,7 @@ function App() {
                         <Route path="/booking-consultation" element={<BookingConsultation/>} />
                         <Route path="/reviews" element={<ReviewForm/>} />
                         <Route path='/profile' element={<ProfileForm />} />
+                        <Route path='/reports' element={<ReportsLayout />} />
                     </Routes>
             </Notification>   
         </BrowserRouter>
