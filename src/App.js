@@ -22,6 +22,8 @@ import Notification from './Components/Notification/Notification';
 
 import ReviewForm from './Components/ReviewForm/ReviewForm';
 
+import ProfileForm from './Components/ProfileCard/ProfileCard';
+
 
 function App() {
 
@@ -39,6 +41,7 @@ function App() {
                         <Route path="/search/doctors" element={<DoctorCard/>} />
                         <Route path="/booking-consultation" element={<BookingConsultation/>} />
                         <Route path="/reviews" element={<ReviewForm/>} />
+                        <Route path='/profile' element={<ProfileForm />} />
                     </Routes>
             </Notification>   
         </BrowserRouter>
