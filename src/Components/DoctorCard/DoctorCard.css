@@ -61,7 +61,7 @@
     
   }
   
-  .book-appoinment-btn {
+  .book-appointment-btn {
     background-color: #3498db;
     color: #fff;
     border: none;
@@ -71,7 +71,7 @@
     cursor: pointer;
   }
   
-  .book-appoinment-btn div:nth-child(2) {
+  .book-appointment-btn div:nth-child(2) {
     font-size: 12px;
     font-weight: bold;
   }
